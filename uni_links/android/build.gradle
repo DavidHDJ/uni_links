@@ -31,4 +31,5 @@ android {
     lintOptions {
         disable 'InvalidPackage'
     }
+    namespace 'name.avioli.unilinks'
 }
