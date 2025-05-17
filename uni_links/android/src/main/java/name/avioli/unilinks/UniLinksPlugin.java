@@ -13,8 +13,8 @@ import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.common.EventChannel;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
-import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
-import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding.OnNewIntentListener;
+import io.flutter.embedding.engine.plugins.FlutterPluginBinding;
+import io.flutter.embedding.engine.plugins.activity.OnNewIntentListener;
 
 public class UniLinksPlugin
         implements FlutterPlugin,
