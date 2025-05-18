@@ -9,19 +9,18 @@ import androidx.annotation.NonNull;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.embedding.engine.plugins.activity.ActivityAware;
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
+import io.flutter.plugin.common.PluginRegistry.NewIntentListener;
 import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.common.EventChannel;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
-import io.flutter.embedding.engine.plugins.FlutterPluginBinding;
-import io.flutter.embedding.engine.plugins.activity.OnNewIntentListener;
 
 public class UniLinksPlugin
         implements FlutterPlugin,
-                MethodChannel.MethodCallHandler,
-                EventChannel.StreamHandler,
-                ActivityAware,
-                OnNewIntentListener {
+        MethodChannel.MethodCallHandler,
+        EventChannel.StreamHandler,
+        ActivityAware,
+        NewIntentListener {
 
     private static final String MESSAGES_CHANNEL = "uni_links/messages";
     private static final String EVENTS_CHANNEL = "uni_links/events";
@@ -114,7 +113,7 @@ public class UniLinksPlugin
     @Override
     public void onAttachedToActivity(@NonNull ActivityPluginBinding binding) {
         binding.addOnNewIntentListener(this);
-        handleIntent(context, binding.getActivity().getIntent());
+        this.handleIntent(this.context, binding.getActivity().getIntent());
     }
 
     @Override
@@ -124,7 +123,7 @@ public class UniLinksPlugin
     public void onReattachedToActivityForConfigChanges(
             @NonNull ActivityPluginBinding binding) {
         binding.addOnNewIntentListener(this);
-        handleIntent(context, binding.getActivity().getIntent());
+        this.handleIntent(this.context, binding.getActivity().getIntent());
     }
 
     @Override
