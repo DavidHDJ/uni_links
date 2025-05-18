@@ -25,7 +25,7 @@ android {
     compileSdkVersion 35
 
     defaultConfig {
-        minSdkVersion 32
+        minSdkVersion 23
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     lintOptions {
